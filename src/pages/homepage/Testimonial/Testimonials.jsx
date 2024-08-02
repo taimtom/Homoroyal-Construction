@@ -40,7 +40,7 @@ const Testimonials = () => {
     ],
   };
   return (
-    <div className="w-screen bg-[#fae8eb] py-10 z-20">
+    <section id="testimonials" className="w-screen bg-[#fae8eb] py-10 z-20">
       <div className="w-[90vw] mx-auto flex justify-center items-center flex-col gap-3">
         <SectionHeader
           title={"testimonials"}
@@ -56,7 +56,7 @@ const Testimonials = () => {
           </Slider>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

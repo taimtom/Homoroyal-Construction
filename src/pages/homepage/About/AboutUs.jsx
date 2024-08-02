@@ -5,8 +5,8 @@ import SectionHeader from "../../../components/Header/SectionHeader";
 
 const AboutUs = () => {
   return (
-    <div className="w-screen bg-[#f7f4f3] py-12 z-20">
-      <div className="w-[90vw] mx-auto flex justify-center items-center flex-col gap-5">
+    <section id="about" className="w-screen bg-[#f7f4f3] py-12 z-20">
+      <div className="w-[90vw] mx-auto flex justify-center items-center flex-col">
         <SectionHeader title={"about us"} context={"who we are"}/>
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
           <div className="w-full h-full flex items-center flex-col">
@@ -49,7 +49,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

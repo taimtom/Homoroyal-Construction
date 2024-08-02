@@ -4,7 +4,7 @@ import SectionHeader from "../../../components/Header/SectionHeader";
 
 const Services = () => {
   return (
-    <div className="w-screen bg-[#fae8eb] py-10">
+    <section id="services" className="w-screen bg-[#fae8eb] py-10">
       <div className="w-[90vw] mx-auto flex justify-center items-center flex-col">
         <SectionHeader title={"services"} context={"what we do"}/>
         <div className="w-full flex justify-start items-center flex-col gap-8">
@@ -28,7 +28,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

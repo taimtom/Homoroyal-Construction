@@ -4,36 +4,12 @@ import service2 from "../assets/images/pexels-reneterp-3990359.jpg";
 import service3 from "../assets/images/pexels-steffen-coonan-1005786-2098624.jpg";
 
 export const navlink = [
-  {
-    id: 1,
-    title: "Home",
-    route: "/",
-  },
-  {
-    id: 2,
-    title: "About",
-    route: "/about",
-  },
-  {
-    id: 3,
-    title: "Services",
-    route: "/services",
-  },
-  {
-    id: 4,
-    title: "Project",
-    route: "/project",
-  },
-  {
-    id: 5,
-    title: "Blog",
-    route: "/blog",
-  },
-  {
-    id: 6,
-    title: "Contact",
-    route: "/contact",
-  },
+  "home",
+  "about",
+  "services",
+  "project",
+  "blog",
+  "contact",
 ];
 
 export const aboutUs = [

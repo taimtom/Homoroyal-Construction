@@ -4,16 +4,16 @@ import SectionHeader from "../../../components/Header/SectionHeader";
 
 const Blog = () => {
   return (
-    <div className="w-screen bg-[#fae8eb] py-10">
+    <section id="blog" className="w-screen bg-[#fae8eb] py-10">
       <div className="w-[90vw] mx-auto flex justify-center items-center flex-col gap-3">
         <SectionHeader title={"Trending news"} context={"trending post"} />
 
         <div className="w-full">
-          <ul className="w-full gap-8 grid grid-cols-12 col-span-10 col-start-2">
+          <ul className="w-full gap-0 md:gap-8 grid grid-cols-12 col-span-10 col-start-2">
             {blogPost.map((item) => (
               <li
                 key={item.id}
-                className="bg-white/40 mb-6 md:md-0 col-span-12 sm:col-span-6 lg:col-span-4 ring-1 ring-red-950/30 shadow-md rounded-lg overflow-hidden"
+                className="bg-white/40 mb-10 md:md-0 col-span-12 sm:col-span-6 lg:col-span-4 ring-1 ring-red-950/30 shadow-md rounded-lg overflow-hidden"
               >
                 <a href="#">
                   <img
@@ -42,7 +42,7 @@ const Blog = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -16,7 +16,7 @@ const Banner = () => {
     attemptPlay();
   }, []);
   return (
-    <div className="w-screen h-[70vh] lg:h-[92vh] relative overflow-hidden">
+    <section id="home" className="w-screen h-[70vh] lg:h-[92vh] relative overflow-hidden">
       <div className="-z-10">
         <video
           style={{
@@ -57,7 +57,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
