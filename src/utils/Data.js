@@ -2,6 +2,8 @@ import team from "../assets/svg/office.svg";
 import service1 from "../assets/images/pexels-mikael-blomkvist-8961401.jpg";
 import service2 from "../assets/images/pexels-reneterp-3990359.jpg";
 import service3 from "../assets/images/pexels-steffen-coonan-1005786-2098624.jpg";
+import service4 from "../assets/images/home-variant-3-555x500.jpg";
+import service5 from "../assets/images/pexels-lucaspezeta-2100681.jpg";
 
 export const navlink = [
   "home",
@@ -78,6 +80,44 @@ export const services = [
     content:
       "We offer a wide range of construction services, including residential, commercial, and industrial buildings.",
     image: service1,
+  },
+];
+
+export const project = [
+  {
+    id: 1,
+    title: "Shopping mall",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, saepe!",
+    image: service1,
+  },
+  {
+    id: 2,
+    title: "Office Space",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, saepe!",
+    image: service2,
+  },
+  {
+    id: 3,
+    title: "Classroom",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, saepe!",
+    image: service3,
+  },
+  {
+    id: 4,
+    title: "Estate",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, saepe!",
+    image: service4,
+  },
+  {
+    id: 5,
+    title: "Bungalow",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, saepe!",
+    image: service5,
   },
 ];
 

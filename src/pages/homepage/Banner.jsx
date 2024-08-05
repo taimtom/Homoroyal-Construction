@@ -43,7 +43,7 @@ const Banner = () => {
             </small>
           </div>
           <h2 className="w-full lg:w-[80%] text-[#e9f1f7] text-[1.8rem] lg:text-[2.8rem] -tracking-wide font-extrabold mt-4 leading-[2.4rem] lg:leading-[4rem]">
-            Design, Construction, and maintenance of the physical and naturally
+            We are your Trusted Builder, we build your Dreams
             {/* built environment such as buildings, estates and roads. */}
           </h2>
 
