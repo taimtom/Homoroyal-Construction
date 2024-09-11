@@ -21,7 +21,7 @@ const Services = () => {
                   <h4 className="text-base text-[#011936] font-medium capitalize mb-2">
                     {item.title}
                   </h4>
-                  <p className="text-gray-600/80 font-normal">{item.content}</p>
+                  <p className="text-gray-600/80 font-normal line-clamp-3">{item.content}</p>
                 </div>
               </div>
             ))}

@@ -18,7 +18,7 @@ const Project = () => {
                   <img
                     class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
                     src={item.image}
-                    alt=""
+                    alt={item.title}
                   />
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>

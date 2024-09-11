@@ -1,5 +1,5 @@
-import React from 'react'
-import SectionHeader from '../../../components/Header/SectionHeader';
+import React from "react";
+import SectionHeader from "../../../components/Header/SectionHeader";
 
 const Contact = () => {
   return (
@@ -87,7 +87,7 @@ const Contact = () => {
                             Technical support
                           </p>
                           <p className="text-sm text-neutral-500">
-                            Homoroyal@gmail.com
+                            info@Homoroyal.com
                           </p>
                         </div>
                       </div>
@@ -115,7 +115,9 @@ const Contact = () => {
                         <div className="ml-6 grow">
                           <p className="mb-2 font-semibold ">Address</p>
                           <p className="text-sm text-neutral-500">
-                            No 4b, Oko-Afo Badagry road
+                            Off Lagos-Badagry Express-Way Homoroyal Building, ,
+                            3/5. Mosafejo Community Road, Mosafejo-Badagry,
+                            Lagos State
                           </p>
                         </div>
                       </div>
@@ -142,7 +144,7 @@ const Contact = () => {
                         </div>
                         <div className="ml-6 grow">
                           <p className="mb-2 font-semibold ">Mobile Number</p>
-                          <p className="text-neutral-500"> (+234) 431 2030</p>
+                          <p className="text-neutral-500">+2349030174333</p>
                         </div>
                       </div>
                     </div>
@@ -181,6 +183,6 @@ const Contact = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Contact
+export default Contact;
