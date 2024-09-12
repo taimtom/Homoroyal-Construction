@@ -189,28 +189,28 @@ export const testiPost = [
   {
     id: 1,
     comment:
-      "I love the fitness apparel and gear I purchased from this site. The quality is exceptional and the prices areunbeatable.",
-    name: "Sheryl Berge",
+      "They know their business and their approach and manner of doing business works well as a team player with the owners and their other consultants.",
+    name: "Jonas Edward",
     image: "https://randomuser.me/api/portraits/men/15.jpg",
   },
   {
     id: 2,
     comment:
-      "I love the fitness apparel and gear I purchased from this site. The quality is exceptional and the prices areunbeatable.",
+      "It has been a pleasure to work with the company. The construction was well planned, organized and scheduled. No surprises. The field Superintendent was very familiar with school work and DSA requirements.",
     name: "Sheryl Berge",
     image: "https://randomuser.me/api/portraits/men/15.jpg",
   },
   {
     id: 3,
     comment:
-      "I love the fitness apparel and gear I purchased from this site. The quality is exceptional and the prices areunbeatable.",
+      "They were exceptional at cost management and quality selection of both materials and sub-contractors.",
     name: "Sheryl Berge",
     image: "https://randomuser.me/api/portraits/men/15.jpg",
   },
   {
     id: 4,
     comment:
-      "I love the fitness apparel and gear I purchased from this site. The quality is exceptional and the prices areunbeatable.",
+      "I wanted to acknowledge the satisfaction on our remodel. I must give a 100% satisfied mark as you not only finished the job early and under budget, but with great sub-contractors and excellent workmanship. The job was done very efficiently and timely",
     name: "Sheryl Berge",
     image: "https://randomuser.me/api/portraits/men/15.jpg",
   },
