@@ -5,7 +5,7 @@ import { navlink } from "../../utils/Data";
 const MobileNavbar = ({ setToggle, scroll }) => {
   const navLinkStyles = ({ isActive }) => {
     return {
-        // color: isActive ? "#faa916" : "",
+      // color: isActive ? "#faa916" : "",
       //   borderBottom: isActive ? "2.1px solid #7CCCBE" : "",
       //   paddingBottom: isActive ? "4px" : "",
     };
@@ -15,9 +15,9 @@ const MobileNavbar = ({ setToggle, scroll }) => {
       <div className="flex justify-between">
         <div className="w-2/3 h-screen bg-[#f7f4f3] px-6 pt-6">
           <ul className="flex text-[#011936] flex-col gap-4 ">
-            {navlink.map((item, i) => (
+            {navlink.map((item) => (
               <li
-                key={i}
+                key={item.id}
                 className=" w-max text-[1.5rem] text-[#011936] font-extrabold active:text-[#faa916] capitalize"
                 onClick={() => {
                   scroll(item);

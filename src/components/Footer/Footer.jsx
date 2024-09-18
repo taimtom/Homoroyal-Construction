@@ -9,8 +9,10 @@ const Footer = () => {
             <img src={brandlogo} alt="" />
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            reiciendis aliquid aperiam aliquam porro. Accusantium.
+            Homoroyal Civil Engineering Construction Nigeria Limited, part of
+            the Homoroyal Group, provides reliable, innovative, and efficient
+            solutions for the construction of buildings, industries, civil
+            structures, roads, and infrastructure.
           </p>
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
@@ -21,7 +23,7 @@ const Footer = () => {
             <ul className="space-y-1">
               <li>
                 <a
-                  className=" text-gray-700 font-medium"
+                  className="font-medium"
                   rel="noopener noreferrer"
                   href="#"
                 >

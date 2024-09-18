@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/images/hmlogo.png";
-import { navlink } from "../../utils/Data";
+import { navlink } from "../../utils/Data"; 
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import MobileNavbar from "./MobileNavMenu";
 
@@ -10,37 +10,44 @@ const Navbar = () => {
   const navigation = useNavigate();
   const [toggle, setToggle] = useState(false);
 
-  //Function to determine the scroll section
-  const scrollToSection = (item) => {
-    const element = document.getElementById(item);
-    if (element) {
-      const marginTop = 5 * 14;
-      const scrollToY =
-        element.getBoundingClientRect().top + window.scrollY - marginTop;
-      window.scrollTo({ top: scrollToY, behavior: "smooth" });
+  // Function to determine the scroll section
+  const scrollToSection = (itemName, path) => {
+    if (itemName === "service") {
+      // If the "service" link is clicked, navigate directly to the service page
+      navigation("/services");
+      setActiveLink("service");
+    } else {
+      // Scroll to the section
+      const element = document.getElementById(itemName);
+      if (element) {
+        const marginTop = 5 * 14;
+        const scrollToY =
+          element.getBoundingClientRect().top + window.scrollY - marginTop;
+        window.scrollTo({ top: scrollToY, behavior: "smooth" });
+      }
     }
   };
 
-  //To determine the active section while scrolling
+  // To determine the active section while scrolling
   const activeSection = () => {
     for (let i = navlink.length - 1; i >= 0; i--) {
-      const section = document.getElementById(navlink[i]);
+      const section = document.getElementById(navlink[i].name);
       if (section) {
         const rect = section.getBoundingClientRect();
         if (rect.top <= 120 && rect.bottom >= 120) {
-          setActiveLink(navlink[i]);
+          setActiveLink(navlink[i].name);
           break;
         }
       }
     }
   };
 
-  //Toggling navbar
-  const handleTogggle = () => {
+  // Toggling navbar
+  const handleToggle = () => {
     setToggle(!toggle);
   };
 
-  //setting an active link
+  // Setting the active link styles
   const navLinkStyles = ({ isActive }) => {
     return {
       borderBottom: isActive ? "2.1px solid #faa916" : "",
@@ -48,7 +55,7 @@ const Navbar = () => {
     };
   };
 
-  //Quote routing
+  // Quote routing
   const routeQuote = () => {
     navigation(`/quote`);
   };
@@ -61,21 +68,27 @@ const Navbar = () => {
         setIsScrolled(false);
       }
 
-      activeSection();
+      activeSection(); // Track active section while scrolling
     };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
-    <div className={"w-screen h-[5rem] z-50 bg-[#f7f4f3] fixed ${"}>
+    <div
+      className={`w-screen h-[5rem] z-50 bg-[#f7f4f3] fixed ${
+        isScrolled ? "scrolled-navbar-class" : ""
+      }`}
+    >
       <div className="w-[90vw] mx-auto h-full flex items-center justify-between">
         <div className="flex items-center">
           {/* Menu bar */}
           <div
-            onClick={handleTogggle}
+            onClick={handleToggle}
             className="xs:block md:hidden bg-green-20/50 cursor-pointer p-1.5 rounded-md ring-1 ring-[#faa916] mr-2"
           >
             {toggle ? (
@@ -110,36 +123,37 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          {/*End Menu bar */}
+          {/* End Menu bar */}
           <div className="w-20 lg:w-28 p-2 z-30">
             <Link to={`/`}>
-              {" "}
-              <img className="w-full h-full object-cover" src={logo} alt="" />
+              <img
+                className="w-full h-full object-cover"
+                src={logo}
+                alt="Logo"
+              />
             </Link>
           </div>
         </div>
         <ul className="hidden lg:flex justify-between items-center gap-6">
-          {navlink.map((item, i) => (
+          {navlink.map((item) => (
             <li
-              key={i}
+              key={item.id}
               className="text-[0.9rem] font-medium capitalize"
-              onClick={() => scrollToSection(item)}
+              onClick={() => scrollToSection(item.name)}
             >
               <NavLink
-                style={navLinkStyles(activeLink)}
                 className={`group duration-0 ${
-                  activeLink === item
+                  activeLink === item.name
                     ? "border-b-[2.1px] border-[#faa916] pb-[3px] transition duration-200"
                     : ""
                 }`}
               >
-                {item}
-                {/* <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[2px] bg-[#faa916]"></span> */}
+                {item.name}
               </NavLink>
             </li>
           ))}
         </ul>
-        <div className="">
+        <div>
           <button
             onClick={routeQuote}
             className="bg-blue-700 text-white text-[0.7rem] lg:text-sm font-medium py-2.5 px-6 rounded-md"
@@ -148,7 +162,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      <div className="">
+      <div>
         {toggle && (
           <MobileNavbar setToggle={setToggle} scroll={scrollToSection} />
         )}

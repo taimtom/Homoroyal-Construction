@@ -6,19 +6,19 @@ import service4 from "../assets/images/home-variant-3-555x500.jpg";
 import service5 from "../assets/images/pexels-lucaspezeta-2100681.jpg";
 
 // services
-import projectEng from "../assets/images/project.jpg"
-import structural from "../assets/images/structural.jpg"
-import architecture from "../assets/images/architectural.jpg"
-import electrical from "../assets/images/electrical.jpg"
-import construction from "../assets/images/construction.jpg"
+import projectEng from "../assets/images/project.jpg";
+import structural from "../assets/images/structural.jpg";
+import architecture from "../assets/images/architectural.jpg";
+import electrical from "../assets/images/electrical.jpg";
+import construction from "../assets/images/construction.jpg";
 
 export const navlink = [
-  "home",
-  "about",
-  "services",
-  "project",
-  "blog",
-  "contact",
+  { id: 1, name: "home" },
+  { id: 2, name: "about" },
+  { id: 3, name: "service", path: "/services" },
+  { id: 4, name: "project" },
+  { id: 5, name: "blog" },
+  { id: 6, name: "contact" },
 ];
 
 export const aboutUs = [
@@ -50,42 +50,42 @@ export const services = [
     id: 1,
     title: "Architecture",
     content:
-      "Our Architects work closely with clients to turn their visions into reality, ensuring a thorough understanding of requirements and requests.",
+      "Homoroyal Architects work closely with clients to turn their visions into reality, ensuring a thorough understanding of requirements and requests. In an interdisciplinary approach, they collaborate with engineers and consider their contributions to ensure quality, cost, and time requirements are met in all design phases.",
     image: architecture,
   },
   {
     id: 2,
     title: "Structural Engineering",
     content:
-      "Our Structural Engineer’s research, design, and plan structural components and systems to achieve design goals. Their structural designs ensure technical viability, integrity, and safety of design criteria, as well as the durable performance of bearing elements and materials. ",
+      "Homoroyal's structural Engineer’s research, design, and plan structural components and systems to achieve design goals. Their structural designs ensure technical viability, integrity, and safety of design criteria, as well as the durable performance of bearing elements and materials. Special emphasis is placed on conformity with quality.",
     image: structural,
   },
   {
     id: 3,
     title: "Project Management",
     content:
-      "Our Project Management service offers tailored and integrated solutions, based on processes and systems that align with the company's engineering and design services. The specialized personnel coordinate the technical disciplines in-house, manage designs, and work closely with clients over the entire life cycle of a project. ",
+      "Homoroyal's project management service offers tailored and integrated solutions, based on processes and systems that align with the company's engineering and design services. The specialized personnel coordinate the technical disciplines in-house, manage designs, and work closely with clients over the entire life cycle of a project. They also support the selection, ongoing assessment, and management of third parties during the construction phase.",
     image: projectEng,
   },
   {
     id: 4,
     title: "infrastructural Engineering",
     content:
-      "Our specialized engineers utilize the latest computer-aided software to contribute their knowledge and expertise to ensure the durability of infrastructure projects of all sizes.",
+      "Homoroyal's specialized engineers utilize the latest computer-aided software to contribute their knowledge and expertise to ensure the durability of infrastructure projects of all sizes. They aim to deliver durable and environmentally sustainable infrastructure solutions across the country, which respond to all types of engineering challenges from concept to implementation.",
     image: service1,
   },
   {
     id: 5,
     title: "construction engineering",
     content:
-      "We are reputable Construction Management company that has delivered a diverse range of construction projects for both public and private sectors.",
+      "Homoroyal is a reputable construction management company that has delivered a diverse range of construction projects for both private and public sectors. We have established loyal business relationships through our commitment to servicing all client projects, whether they are large or small.",
     image: construction,
   },
   {
     id: 6,
     title: "Mech/Elect Engineering ",
     content:
-      "Our Mechanical and Electrical engineers specialize in working on complex interdisciplinary projects. Our team provides mechanical and electrical solutions that combine the latest equipment with the highest aesthetical aspects, all while considering the required standards and regulations",
+      "Homoroyal's mechanical and electrical engineers specialize in working on complex interdisciplinary projects. Our team provides mechanical and electrical solutions that combine the latest equipment with the highest aesthetical aspects, all while considering the required standards and regulations.",
     image: electrical,
   },
 ];
