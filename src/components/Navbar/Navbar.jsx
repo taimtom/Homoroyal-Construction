@@ -11,7 +11,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   // Function to determine the scroll section
-  const scrollToSection = (itemName, path) => {
+  const scrollToSection = (itemName) => {
     if (itemName === "service") {
       // If the "service" link is clicked, navigate directly to the service page
       navigation("/services");

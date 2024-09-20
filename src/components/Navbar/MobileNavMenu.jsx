@@ -24,12 +24,13 @@ const MobileNavbar = ({ setToggle, scroll }) => {
                 }}
               >
                 <NavLink
+                  to={item.path}
                   onClick={() => {
                     setToggle(false);
                   }}
                   style={navLinkStyles}
                 >
-                  {item}
+                  {item.name}
                 </NavLink>
               </li>
             ))}
