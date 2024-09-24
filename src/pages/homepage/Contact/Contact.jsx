@@ -1,63 +1,130 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import SectionHeader from "../../../components/Header/SectionHeader";
 
+//Loading environment variables
+const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicId = import.meta.env.VITE_EMAILJS_PUBLIC_ID;
+
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  //Creating object that contains dynamic template params
+  const templateParams = {
+    from_name: formData.name,
+    from_email: formData.email,
+    to_name: "Homoroyal Construction",
+    // subject: formData.subject,
+    message: formData.message,
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    // Send email using emailjs
+    emailjs.send(serviceId, templateId, templateParams, publicId).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        setLoading(false);
+        setSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+      },
+      (err) => {
+        console.error("FAILED...", err);
+        setLoading(false);
+      }
+    );
+  };
+
   return (
     <section id="contact" className="w-screen bg-[#fae8eb] py-10 z-20">
       <div className="w-[90vw] mx-auto flex justify-center items-center flex-col gap-4">
         <SectionHeader title={"contact"} context={"our medium of contact"} />
         <section className="mb-9 w-full">
-          {/* <div
-            id="map"
-            className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat"
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11672.945750644447!2d-122.42107853750231!3d37.7730507907087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858070cc2fbd55%3A0xa71491d736f62d5c!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1619524992238!5m2!1sen!2sus"
-              width="100%"
-              height="480"
-              allowfullscreen=""
-              loading="lazy"
-            ></iframe>
-          </div> */}
           <div className="">
             <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  md:py-16 md:px-12 border border-gray-300 z-40">
               <div className="flex flex-wrap">
                 <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
-                  <form>
-                    <div className="relative mb-6" data-te-input-wrapper-init>
-                      <input
-                        type="name"
-                        className="peer block min-h-[auto] w-full rounded border-[1.3px] bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none "
-                      />
-                      <label className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] px-1 origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ">
+                  <form onSubmit={handleSubmit}>
+                    <div className="mb-5">
+                      <label htmlFor="name" className="mb-1 block text-black">
                         Name
                       </label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Full Name"
+                        className="w-full rounded-md border border-[#e0e0e0] bg-white py-2.5 px-6 font-normal text-[#6B7280] outline-none focus:border-blue-700 focus:shadow-md"
+                        required
+                      />
                     </div>
-                    <div className="relative mb-6" data-te-input-wrapper-init>
+                    <div className="mb-5">
+                      <label htmlFor="email" className="mb-1 block text-black">
+                        Email
+                      </label>
                       <input
                         type="email"
-                        className="peer block min-h-[auto] w-full rounded border-[1.3px] bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none "
+                        name="email"
+                        id="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="johndoe@example.com"
+                        className="w-full rounded-md border border-[#e0e0e0] bg-white py-2.5 px-6 font-normal text-[#6B7280] outline-none focus:border-blue-700 focus:shadow-md"
+                        required
                       />
-                      <label className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ">
-                        Email address
-                      </label>
                     </div>
-                    <div className="relative mb-6" data-te-input-wrapper-init>
-                      <textarea
-                        className="peer block min-h-[auto] w-full rounded text-sm border-[1.3px] bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none "
-                        rows="3"
-                      ></textarea>
-                      <label className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] text-sm origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ">
+                    <div className="mb-5">
+                      <label
+                        htmlFor="message"
+                        className="mb-1 block text-black"
+                      >
                         Message
                       </label>
+                      <textarea
+                        rows="5"
+                        name="message"
+                        id="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Type your message"
+                        className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white text-[0.76rem] lg:text-sm py-2.5 px-6 font-normal text-[#6B7280] outline-none focus:border-blue-700 focus:shadow-md"
+                        required
+                      ></textarea>
                     </div>
 
                     <button
-                      type="button"
-                      className="mb-6 rounded bg-blue-00 text-white px-9 pt-2.5 pb-2 text-xs font-medium capitalize leading-normal lg:mb-0"
+                      type="submit"
+                      className="mb-2 rounded bg-blue-700 text-white px-9 pt-2.5 pb-2 text-sm font-medium capitalize leading-normal lg:mb-0"
+                      disabled={loading}
                     >
-                      Send
+                      {loading ? "Sending..." : "Send"}
                     </button>
+
+                    {success && (
+                      <p className="text-green-600 mt-3">
+                        Message sent successfully!
+                      </p>
+                    )}
                   </form>
                 </div>
                 <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">

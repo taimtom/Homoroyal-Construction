@@ -23,7 +23,7 @@ const Footer = () => {
             <ul className="space-y-1">
               <li>
                 <a
-                  className="font-medium"
+                  className=""
                   rel="noopener noreferrer"
                   href="#"
                 >
@@ -66,22 +66,27 @@ const Footer = () => {
           </div>
           <div className="space-y-3">
             <h3 className="tracking-wide uppercase text-[#e9f1f7] text-sm font-semibold">
-              Developers
+             Our Services
             </h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Public API
+                  Building Construction
                 </a>
               </li>
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Documentation
+                  Civil Engineering
                 </a>
               </li>
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Guides
+                  Estate
+                </a>
+              </li>
+              <li>
+                <a rel="noopener noreferrer" href="#">
+                  Project Consultancy
                 </a>
               </li>
             </ul>

@@ -49,8 +49,8 @@ const Testimonials = () => {
         <div className="w-full">
           <Slider {...settings}>
             {testiPost.map((item) => (
-              <div className="w-full px-4">
-                <TestimonialCard key={item.id} carousel={item} />
+              <div key={item.id} className="w-full px-4">
+                <TestimonialCard carousel={item} />
               </div>
             ))}
           </Slider>
