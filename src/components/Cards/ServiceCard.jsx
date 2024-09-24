@@ -3,7 +3,7 @@ import servi from "../../assets/images/structural.jpg";
 
 const ServiceCard = ({ data }) => {
   return (
-    <div id={data.id} className="w-full overflow-hidden">
+    <div id={data.title} className="w-full overflow-hidden">
       <div
         className={`w-full flex items-center sm:flex-col flex-wrap ${
           data.id % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"

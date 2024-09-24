@@ -24,7 +24,7 @@ const BlogCard = ({ item }) => {
       <div
         key={item.id}
         onClick={handleBlog}
-        className="bg-white/40 mb-10 md:md-0 col-span-12 sm:col-span-6 lg:col-span-4 ring-1 ring-red-950/30 shadow-md rounded-lg overflow-hidden"
+        className="bg-white/40 mb-10 md:md-0 col-span-12 sm:col-span-6 lg:col-span-4 ring-1 ring-red-950/30 shadow-md rounded-lg cursor-pointer overflow-hidden"
       >
         {/* <Link onClick={handleBlog}> */}
           <img

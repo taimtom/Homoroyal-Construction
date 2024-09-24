@@ -13,7 +13,7 @@ const Services = () => {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {services.map((item) => (
               <Link
-                to={`/services#${item.id}`}
+                to={`/services#${item.title}`}
                 key={item.id}
                 className="w-full bg-[#ECF8F8]/60 rounded-lg shadow-md z-20 overflow-hidden ring-1 ring-[#011936]/20"
               >
