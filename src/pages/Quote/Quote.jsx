@@ -24,6 +24,7 @@ const Quote = () => {
     to_name: 'Homoroyal Construction',
     subject: formData.subject,
     message: formData.message,
+    reply_to: formData.email
   }
 
   const [loading, setLoading] = useState(false);
