@@ -24,6 +24,7 @@ const Contact = () => {
     to_name: "Homoroyal Construction",
     // subject: formData.subject,
     message: formData.message,
+    reply_to: formData.email
   };
 
   const handleChange = (e) => {
@@ -154,7 +155,7 @@ const Contact = () => {
                             Technical support
                           </p>
                           <p className="text-sm text-neutral-500">
-                            info@Homoroyal.com
+                           homoroyal@gmail.com
                           </p>
                         </div>
                       </div>
@@ -182,9 +183,7 @@ const Contact = () => {
                         <div className="ml-6 grow">
                           <p className="mb-2 font-semibold ">Address</p>
                           <p className="text-sm text-neutral-500">
-                            Off Lagos-Badagry Express-Way Homoroyal Building, ,
-                            3/5. Mosafejo Community Road, Mosafejo-Badagry,
-                            Lagos State
+                           5, Off Lagos Badagry Expressway, Homoroyal Building, Mosafejo-Badagry, Lagos State.
                           </p>
                         </div>
                       </div>
@@ -237,7 +236,7 @@ const Contact = () => {
                         </div>
                         <div className="ml-6 grow">
                           <p className="mb-2 font-semibold ">Whatsapp</p>
-                          <p className="text-neutral-500"> +234 81000000</p>
+                          <p className="text-neutral-500"> +2349030174333</p>
                         </div>
                       </div>
                     </div>
